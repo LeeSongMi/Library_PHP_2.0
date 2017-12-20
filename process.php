@@ -7,6 +7,7 @@
 		$bookname = $_POST['bookname'];
 		$writer = $_POST['writer'];
 		$rtitle = $_POST['rtitle'];
+		$rpass = $_POST['rpass'];
 		$rcontent = $_POST['rcontent'];
 		$board = $_GET['board'];
 		
@@ -23,6 +24,14 @@
 		if(empty($rcontent)) {
 			check("내용이 없습니다. 다시 입력해주세요.");
 		}
+		if(empty($rtitle)) {
+			check("제목이 없습니다. 다시 입력해주세요.");
+		}
+		if(empty($rpass)) {
+			check("비밀번호가 없습니다. 다시 입력해주세요.");
+		}
+
+
 
 		$con = mysql_connect("localhost", "comma", "comma");
 		mysql_select_db("commadb", $con);
@@ -41,8 +50,8 @@
 		$rdate = date("Y-m-d");
 		
 		$insert_query = "INSERT INTO $board
-						( bookname, writer, rtitle, rcontent, vote, hit, rid, rdate)
-						VALUES('$bookname', '$writer', '$rtitle', '$rcontent', 0, 0, $id, '$rdate' )";
+						( bookname, writer, rtitle, rcontent, vote, hit, rid, rdate, rpass)
+						VALUES('$bookname', '$writer', '$rtitle', '$rcontent', 0, 0, $id, '$rdate', '$rpass')";
 					
 		$insert_result = mysql_query($insert_query, $con);
 					
