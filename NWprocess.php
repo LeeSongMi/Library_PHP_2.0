@@ -39,9 +39,9 @@
 		$total = mysql_num_rows($result);
 		
 		if(!$total) {
-			$id = 1;
+			$nid = 1;
 		} else {
-			$id = $total + 1;
+			$nid = $total + 1;
 		}
 		
 		$ndate = date("Y-m-d");
