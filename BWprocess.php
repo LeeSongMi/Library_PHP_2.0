@@ -4,10 +4,10 @@
 	</head>
 	<body>
 	<?
-		$board = "Book";
+		$board = "book";
 		$title = $_POST['title'];
 		$publisher = $_POST['publisher'];
-		$auther = $_POST['auther'];
+		$author = $_POST['author'];
 		$byear = $_POST['byear'];
 		$num = $_POST['num'];
 		$price = $_POST['price'];
@@ -38,8 +38,8 @@
 		mysql_select_db("commadb", $con);		
 		
 		$insert_query = "INSERT INTO $board
-						( title, publisher, auther, byear, num, price, content, imgpath)
-						VALUES( '$title', '$publisher', '$auther', '$byear', $num, $price, '$content', '$imgpath')";
+						( title, publisher, author, byear, num, price, content, imgpath)
+						VALUES( '$title', '$publisher', '$author', '$byear', $num, $price, '$content', '$imgpath')";
 					
 		$insert_result = mysql_query($insert_query, $con);
 					
